@@ -7,8 +7,12 @@ public class raj03 {
     //Quick Sort (Pivot point)
     public static void main(String[] args) {
         int[] a={5,4,3,2,1};
+        System.out.println(Arrays.toString(a));
         QuickSort(a,0,a.length-1);
         System.out.println(Arrays.toString(a));
+        StringBuilder s=new StringBuilder();
+        s.append(34);
+        System.out.println(s.reverse());
     }
 
     static void QuickSort(int[] a,int lo ,int hi)

@@ -11,7 +11,7 @@ public class raj01 {
 
     public static void main(String[] args) {
 
-        // For a weighted grpah put weight in place of 1
+        // For a weighted graph put weight in place of 1
         int node=5,edge=6;
         int[][] adj=new int[node+1][node+1]; // for 1 indexed
         matrix(adj,1,2);
@@ -55,7 +55,7 @@ public class raj01 {
         boolean[] visited=new boolean[v+1]; // Here v denotes nu,ber of vertices
 
         Queue<Integer> q=new ArrayDeque<>();
-        q.add(1);  // as i already know about the source data
+        q.add(1);  // as I already know about the source data
         visited[1]=true;
 
         while (!q.isEmpty()){

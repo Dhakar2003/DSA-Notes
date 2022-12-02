@@ -1,57 +1,33 @@
 package com.Prefix;
 
-import java.util.HashMap;
-
-public class Solution {
+import java.util.*;
+class Solution {
 
     public static void main(String[] args) {
-
-        HashMap<String, Integer> map
-                = new HashMap<>();
-        map.put("a", 100);
-//        map.put("b", 300);
-        map.put("c", 300); 
-        map.put("d", 400);
-
-        // print map details
-        System.out.println("HashMap: "
-                + map.toString());
-
-        // provide key whose value has to be obtained
-        // and default value for the key. Store the
-        // return value in k
-        int k = map.getOrDefault("b", 500);
-
-        // print the value of k returned by
-        // getOrDefault(Object key, V defaultValue) method
-        System.out.println("Returned Value: " + k);
-
+//        subsets(new int[]{1,2,2});
+        System.out.println(subsets(new int[]{1,2,2}));
     }
-
-        static  public int subarraySum(int[] nums, int k) {
-            //  through this i can get a prefix sum
-            if(nums.length==1 && nums[0]==k)
-                return 1;
-            else if(nums.length==1 && nums[0]!=k)
-                return 0;
-            for(int i=1;i<nums.length;i++)
-            {
-                nums[i]+=nums[i-1];
-            }
-            // now we can check all possible outcomes
-            int count=0;
-            for(int i=0;i<nums.length;i++)
-            {
-                if(nums[i]==k )
-                {
-                    count++;
-                }
-                for(int j=0;j<i;j++)
-                {
-                    if((nums[i]-nums[j])==k)
-                        count++;
-                }
-            }
-            return count;
-        }
+   static public List<List<Integer>> subsets(int[] nums) {
+        
+        List<List<Integer>> ans=new ArrayList<>();
+        ans.add(new ArrayList<>());
+        Permute(ans ,new ArrayList<>(),nums,0);
+        
+        return ans;
     }
+    
+ static public void Permute(List<List<Integer>> ans,List<Integer> current,int[] nums,int pos)
+  {
+      if(pos==nums.length){
+          return;
+      }
+      
+      for(int i=0;i<ans.size();i++){
+          current =new ArrayList<>(ans.get(i));
+          current.add(nums[pos]);
+           ans.add(current);
+}
+      Permute(ans,new ArrayList<>(),nums,pos+1);
+      
+  }
+}

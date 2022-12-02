@@ -45,6 +45,7 @@ public class ImplementStackUsingQueue {
     private Queue<Integer> queue;
     int size=0;
     public ImplementStackUsingQueue(){
+
         queue=new LinkedList();
     }
 
